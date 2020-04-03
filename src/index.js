@@ -49,7 +49,9 @@ class Game extends React.Component {
     super(props); // Sempre chamar o super ao definir o constructor de uma subclasse
     this.state = {
       history: [{
-        squares: Array(9).fill(null)
+        squares: Array(9).fill(null),
+        row: null,
+        col: null,
       }],
       stepNumber: 0,
       xIsNext: true
@@ -60,6 +62,27 @@ class Game extends React.Component {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length-1];
     const squares = current.squares.slice(); // Copia o array
+    let row = current.row;
+    let col = current.col;
+
+    // Define as Rows
+    if(i === 0 || i === 1 || i === 2){ 
+      row = 1;
+    } else if (i === 3 || i === 4 || i === 5) {
+      row = 2;
+    } else {
+      row = 3;
+    }
+
+    // Define as Cols
+    if(i === 0 || i === 3 || i === 6){
+      col = 1;
+    } else if (i === 1 || i === 4 || i === 7) {
+      col = 2;
+    } else {
+      col = 3;
+    }
+
 
     if(calculateWinner(squares) || squares[i]){ // Caso alguem tenha vencido ou se o quadrado ja esteja ocupado
       return;
@@ -69,6 +92,8 @@ class Game extends React.Component {
     this.setState({
       history: history.concat([{ // Preferível o uso do concat ao invés do push() por nao modificar o array original
         squares: squares,
+        row: row,
+        col: col,
       }]),
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext,
@@ -91,10 +116,10 @@ class Game extends React.Component {
       const desc = move ?
         'Go to move #' + move :
         'Go to game start';
-        
+
         return (
           <li key={move}>
-            <button onClick={() => this.jumpTo(move)}>{desc}</button>
+            <button onClick={() => this.jumpTo(move)}>{desc}-({step.row},{step.col})</button>
           </li>
         );
     });
