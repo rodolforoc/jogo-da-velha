@@ -12,33 +12,36 @@ function Square(props) {
 }
 
 class Board extends React.Component {
-  renderSquare(i) {
+ renderRow(number){
+    const squares = [];
+    for(let i = number ; i< number + 3; i++) {
+      squares.push(
+        <Square  
+          key={i}
+          value={this.props.squares[i]} 
+          onClick={() => this.props.onClick(i)}
+        />
+      )
+    }
     return (
-      <Square  
-        value={this.props.squares[i]} 
-        onClick={() => this.props.onClick(i)}
-      />
+      <div className="board-row">
+        {squares}
+      </div>
     );
   }
 
+
   render() {
+    const rows = [];
+    for(let i= 0; i <= 6; i += 3) {
+      rows.push(
+        this.renderRow(i)
+      )
+    }
+
     return (
       <div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
+        {rows}    
       </div>
     );
   }
@@ -116,7 +119,7 @@ class Game extends React.Component {
       const desc = move ?
         'Go to move #' + move :
         'Go to game start';
-        console.log(step);
+
       const bold = step.row === current.row && step.col === current.col ?
         <button onClick={() => this.jumpTo(move)}><b>{desc}-({step.row},{step.col})</b></button> :
         <button onClick={() => this.jumpTo(move)}>{desc}-({step.row},{step.col})</button>;
