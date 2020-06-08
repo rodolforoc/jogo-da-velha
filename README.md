@@ -1,12 +1,13 @@
 # Tic Tac Toe Game
 
-Project made by the React tutorial available in https://reactjs.org/tutorial/tutorial.html
+- A simple tic-tac-toe exercise of the main concepts behind React
 
-- Project made to study the main concepts related to React
+Project made by the React tutorial available in https://reactjs.org/tutorial/tutorial.html
 
 ## Tools
 
 - [Visual Studio Code](https://code.visualstudio.com/download/)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable
 
 ## Available Scripts
 
