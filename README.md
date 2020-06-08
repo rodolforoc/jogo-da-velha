@@ -7,7 +7,7 @@ Project made by the React tutorial available in https://reactjs.org/tutorial/tut
 ## Tools
 
 - [Visual Studio Code](https://code.visualstudio.com/download/)
-- [Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable
+- [Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable)
 
 ## Available Scripts
 
