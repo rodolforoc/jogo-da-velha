@@ -6,7 +6,7 @@ Project made by the React tutorial available in https://reactjs.org/tutorial/tut
 
 ## Tools
 
-- https://code.visualstudio.com/download/
+- [Visual Studio Code](https://code.visualstudio.com/download/)
 
 ## Available Scripts
 
