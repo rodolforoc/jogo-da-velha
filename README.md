@@ -1,6 +1,12 @@
-Tic Tac Toe Game
+# Tic Tac Toe Game
 
 Project made by the React tutorial available in https://reactjs.org/tutorial/tutorial.html
+
+- Project made to study the main concepts related to React
+
+## Tools
+
+- https://code.visualstudio.com/download/
 
 ## Available Scripts
 
